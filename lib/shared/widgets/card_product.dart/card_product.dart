@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:meuapp/shared/models/product_model.dart';
+
 import 'package:meuapp/shared/theme/app_theme.dart';
 
 class CardProduct extends StatelessWidget {
-  final bool like;
+  final ProductModel product;
   const CardProduct({
     Key? key,
-    required this.like,
+    required this.product,
   }) : super(key: key);
 
   @override
@@ -24,7 +26,7 @@ class CardProduct extends StatelessWidget {
               leading: CircleAvatar(
                 backgroundColor: AppTheme.colors.background,
                 radius: 30,
-                child: like
+                child: product.currentPrice < product.lastPrice
                     ? Icon(FontAwesomeIcons.thumbsUp)
                     : Icon(
                         FontAwesomeIcons.thumbsDown,
@@ -32,11 +34,11 @@ class CardProduct extends StatelessWidget {
                       ),
               ),
               title: Text(
-                "Produto",
+                product.name,
                 style: AppTheme.textStyles.titleListTile,
               ),
               subtitle: Text(
-                "preço",
+                "Estava R\$ ${product.lastPrice}",
                 style: AppTheme.textStyles.subtitleListTile,
               ),
             ),
@@ -48,7 +50,8 @@ class CardProduct extends StatelessWidget {
                     style: AppTheme.textStyles.subtitleListTile,
                     children: [
                       TextSpan(
-                          text: "R\$ 67,50", style: AppTheme.textStyles.title),
+                          text: "R\$ ${product.currentPrice}",
+                          style: AppTheme.textStyles.title),
                     ]),
               ),
             )

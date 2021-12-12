@@ -4,7 +4,6 @@ import 'package:meuapp/modules/login/repositories/login_repository_impl.dart';
 import 'package:meuapp/shared/services/app_database.dart';
 
 import 'package:meuapp/shared/theme/app_theme.dart';
-import 'package:meuapp/shared/utils/app_state.dart';
 import 'package:meuapp/shared/widgets/button/button.dart';
 import 'package:meuapp/shared/widgets/input_text/input_text.dart';
 import 'package:validators/validators.dart';
@@ -32,6 +31,7 @@ class _LoginPageState extends State<LoginPage> {
           error: (message, _) => scaffoldKey.currentState!
               .showBottomSheet((context) => BottomSheet(
                   onClosing: () {},
+                  // ignore: avoid_unnecessary_containers
                   builder: (context) => Container(
                         child: Text(message),
                       ))),

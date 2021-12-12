@@ -9,7 +9,7 @@ class AppListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(bottom: 16),
       child: Container(
         decoration: BoxDecoration(
             color: AppTheme.colors.textEnabled,
@@ -20,11 +20,17 @@ class AppListTile extends StatelessWidget {
             radius: 30,
             child: Text(
               "12/12",
-              style: TextStyle(color: Colors.black),
+              style: AppTheme.textStyles.label,
             ),
           ),
-          title: Text("Produto"),
-          subtitle: Text("preço"),
+          title: Text(
+            "Produto",
+            style: AppTheme.textStyles.titleListTile,
+          ),
+          subtitle: Text(
+            "preço",
+            style: AppTheme.textStyles.subtitleListTile,
+          ),
           trailing: PopupMenuButton(
             itemBuilder: (context) => [
               PopupMenuItem(child: Text("Editar")),

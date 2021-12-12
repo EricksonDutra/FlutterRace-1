@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meuapp/shared/models/user_model.dart';
 import 'package:meuapp/shared/theme/app_theme.dart';
 import 'package:meuapp/shared/widgets/bottom_navigator/app_bottom_navigator.dart';
+import 'package:meuapp/shared/widgets/card_chart/card_chart.dart';
 import 'package:meuapp/shared/widgets/card_product.dart/card_product.dart';
 import 'package:meuapp/shared/widgets/list_tile/app_list_tile.dart';
 
@@ -33,12 +34,24 @@ class _HomePageState extends State<HomePage> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: CardChart(
+                  value: 365.00,
+                  percent: 1,
+                ),
+              ),
+              SizedBox(
+                height: 2,
+              ),
               SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: 126,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => CardProduct(),
+                  itemBuilder: (context, index) => CardProduct(
+                    like: index % 2 == 0,
+                  ),
                 ),
               ),
               AppListTile(),

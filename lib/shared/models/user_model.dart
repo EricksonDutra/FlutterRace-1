@@ -32,9 +32,9 @@ class UserModel {
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
-      id: map['id'] ?? '',
-      email: map['email'] ?? '',
-      name: map['name'] ?? '',
+      id: map['id'],
+      email: map['email'],
+      name: map['name'],
     );
   }
 

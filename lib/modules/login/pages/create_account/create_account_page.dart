@@ -29,6 +29,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
           error: (message, _) => scaffoldKey.currentState!
               .showBottomSheet((context) => BottomSheet(
                   onClosing: () {},
+                  // ignore: avoid_unnecessary_containers
                   builder: (context) => Container(
                         child: Text(message),
                       ))),

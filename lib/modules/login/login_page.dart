@@ -77,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                   obscure: true,
                   hint: "Digite sua senha",
                   validator: (value) =>
-                      value.length >= 6 ? null : "Digite uma senha mais forte",
+                      value.length >= 4 ? null : "Digite uma senha mais forte",
                   onChanged: (value) => controller.onChange(password: value),
                 ),
                 SizedBox(

@@ -25,6 +25,7 @@ class AppWidget extends StatelessWidget {
               user: ModalRoute.of(context)!.settings.arguments as UserModel,
             )
       },
+      debugShowCheckedModeBanner: false,
     );
   }
 }
